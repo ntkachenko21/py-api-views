@@ -17,11 +17,9 @@ class MovieSerializer(serializers.ModelSerializer):
         queryset=Genre.objects.all(),
     )
 
-
     class Meta:
         model = Movie
         fields = "__all__"
-
 
     def create(self, validated_data):
         actors = validated_data.pop("actors")
